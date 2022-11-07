@@ -1,15 +1,19 @@
 package com.skecorp.studentsmaster.customer;
 
-import com.skecorp.studentsmaster.StudentsMasterApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CustomerController {
 
+    private final  CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping
     Customer getCustomer() {
-        return new Customer(1L, "John Doe");
+        return customerService.getCustomer();
     }
 }
