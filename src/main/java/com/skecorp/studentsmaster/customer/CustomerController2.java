@@ -3,6 +3,7 @@ package com.skecorp.studentsmaster.customer;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RequestMapping(path = "api/v2/customers")
 @RestController
@@ -17,6 +18,11 @@ public class CustomerController2 {
     @GetMapping
     List<Customer> getCustomer() {
         return customerService.getCustomers();
+    }
+
+    @GetMapping(path = "{customerId}")
+    Customer getCustomer(@PathVariable("customerId") Long id) {
+        return customerService.getCustomer(id);
     }
 
     @PostMapping
