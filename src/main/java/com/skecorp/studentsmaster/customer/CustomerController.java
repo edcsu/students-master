@@ -2,6 +2,7 @@ package com.skecorp.studentsmaster.customer;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Objects;
 
@@ -26,13 +27,13 @@ public class CustomerController {
     }
 
     @PostMapping
-    void createCustomer(@RequestBody Customer customer){
+    void createCustomer(@Valid @RequestBody Customer customer){
         System.out.println("Post request...");
         System.out.println(customer);
     }
 
     @PutMapping
-    void updateCustomer(@RequestBody Customer customer){
+    void updateCustomer(@Valid @RequestBody Customer customer){
         System.out.println("Update request...");
         System.out.println(customer);
     }
