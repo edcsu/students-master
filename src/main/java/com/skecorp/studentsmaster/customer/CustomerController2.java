@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(path = "api/v1/customers")
+@RequestMapping(path = "api/v2/customers")
 @RestController
-public class CustomerController {
+public class CustomerController2 {
 
     private final  CustomerService customerService;
 
-    public CustomerController(CustomerService customerService) {
+    public CustomerController2(CustomerService customerService) {
         this.customerService = customerService;
     }
 
