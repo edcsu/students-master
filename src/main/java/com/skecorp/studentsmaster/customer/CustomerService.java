@@ -1,5 +1,6 @@
 package com.skecorp.studentsmaster.customer;
 
+import com.skecorp.studentsmaster.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,6 @@ public class CustomerService {
                 .stream()
                 .filter( customer -> Objects.equals(customer.getId(), id))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException("Customer with id " + id + " not found"));
+                .orElseThrow(() -> new NotFoundException("Customer with id " + id + " not found"));
     }
 }
