@@ -1,5 +1,6 @@
 package com.skecorp.studentsmaster.customer;
 
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -8,13 +9,10 @@ import java.util.Objects;
 
 @RequestMapping(path = "api/v1/customers")
 @RestController
+@AllArgsConstructor
 public class CustomerController {
 
     private final  CustomerService customerService;
-
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
 
     @GetMapping
     List<Customer> getCustomer() {
