@@ -34,6 +34,10 @@ public class Customer {
         this.email = email;
     }
 
+    public Customer() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -52,7 +56,7 @@ public class Customer {
         return email;
     }
 
-    public Customer() {
+    public Customer(long l, java.lang.String john_doe, java.lang.String password, java.lang.String email) {
     }
 
     @Override
